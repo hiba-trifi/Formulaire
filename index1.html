@@ -13,10 +13,10 @@
 <body>
   <section>
     <form id="form">
-      <h1> 
+      <h1>
         Formulaire d'inscription aux Clubs Parascolaires à Solicode
       </h1>
-      
+
       <span>Nom :</span> <input type="text" id="name">
       <p id="nameOutput"></p>
       <span>Prénom :</span><input type="text" id="lastname">
@@ -131,16 +131,16 @@
       var phonenum = false
       var select = document.getElementById('select')
       for (var k = 0; k < select.options.length; k++) {
-        if (select.options[k].selected === true) { counter++}
+        if (select.options[k].selected === true) { counter++ }
       }
-      
-      if (name.value.length > 15 || name.value == "") { name.style.border = "5px solid red";nameOutput.innerHTML = "Entrer un Nom qui ne depasse pas 15 character" ; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"}
-      else if (lastname.value.length > 15 || lastname.value == "") { lastname.style.border = "5px solid red";document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; lastNameOutput.innerHTML = "Entrer un Prénom qui ne depasse pas 15 character"; name.style.border = "solid green 3px" }
-      else if (!email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) { email.style.border = "5px solid red";document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; emailOutput.innerHTML = "Entre une adrresse email valide"; lastname.style.border = "solid green 3px" }
-      else if (!(phoneNum.value.match(/(06)\d{8}$|(05)\d{8}$|(07)\d{8}$/) && phoneNum.value.match(/^[0-9]+$/))) { phoneNum.style.border = "5px solid red"; phoneNumOutput.innerHTML = "Entrer un nombre de telephone de 10 chiffre qui commence par 05 ou 06 ou 07 "; email.style.border = "solid green 3px";document.getElementById("form").style.boxShadow = " red 5px 5px 5px" }
-      else if (!(document.getElementById("gender-1").checked || document.getElementById("gender-2").checked)) { genderOutput.innerHTML = 'Choisie un Genre';document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; phoneNum.style.border = "3px solid green" }
+
+      if (name.value.length > 15 || name.value == "") { name.style.border = "5px solid red"; nameOutput.innerHTML = "Entrer un Nom qui ne depasse pas 15 character"; document.getElementById("form").style.boxShadow = " red 5px 5px 5px" }
+      else if (lastname.value.length > 15 || lastname.value == "") { lastname.style.border = "5px solid red"; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; lastNameOutput.innerHTML = "Entrer un Prénom qui ne depasse pas 15 character"; name.style.border = "solid green 3px" }
+      else if (!email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) { email.style.border = "5px solid red"; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; emailOutput.innerHTML = "Entre une adrresse email valide"; lastname.style.border = "solid green 3px" }
+      else if (!(phoneNum.value.match(/(06)\d{8}$|(05)\d{8}$|(07)\d{8}$/) && phoneNum.value.match(/^[0-9]+$/))) { phoneNum.style.border = "5px solid red"; phoneNumOutput.innerHTML = "Entrer un nombre de telephone de 10 chiffre qui commence par 05 ou 06 ou 07 "; email.style.border = "solid green 3px"; document.getElementById("form").style.boxShadow = " red 5px 5px 5px" }
+      else if (!(document.getElementById("gender-1").checked || document.getElementById("gender-2").checked)) { genderOutput.innerHTML = 'Choisie un Genre'; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; phoneNum.style.border = "3px solid green" }
       else if (!(document.getElementById("group-1").checked || document.getElementById("group-2").checked || document.getElementById("group-3").checked || document.getElementById("group-4").checked || document.getElementById("group-5").checked)) { groupOutput.innerHTML = 'Choisie un Group'; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; }
-      else if (counter > 3 || counter < 1) { document.getElementById('clubsOutput').innerHTML = "Choisie on moin 1 group , ne depasse pas 3  group" ; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; }
+      else if (counter > 3 || counter < 1) { document.getElementById('clubsOutput').innerHTML = "Choisie on moin 1 group , ne depasse pas 3  group"; document.getElementById("form").style.boxShadow = " red 5px 5px 5px"; }
       else (window.location.href = "./validation.html")
     }
 

@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url(image/bkg.jpg) ;
+  background-image: url(image/bkg.jpg);
   font-family: "Raleway";
   font-family: "Raleway";
   font-weight: 700;
@@ -16,25 +16,24 @@ p {
   margin: 0;
   color: red;
 }
-h1{
+h1 {
   font-size: 1.9rem;
-  color: #042457 ;
-   background-color: #c2faf9;
-   border-radius: 7px;
-   padding: 6px;
+  color: #042457;
+  background-color: #c2faf9;
+  border-radius: 7px;
+  padding: 6px;
   display: flex;
   justify-content: center;
 }
-h2{
+h2 {
   font-size: 1.5rem;
   margin-top: 3%;
 }
 form {
-  
   border-radius: 7px;
   display: flex;
   flex-direction: column;
-  box-shadow: 6px 6px  6px #042457;
+  box-shadow: 6px 6px 6px #042457;
   background-color: white;
   margin: 10% 20% 10% 0%;
   padding: 5%;

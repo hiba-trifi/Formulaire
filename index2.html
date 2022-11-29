@@ -16,9 +16,7 @@
   <body>
     <section>
       <form id="form">
-        <h1> 
-          Formulaire d'inscription aux Clubs Parascolaires à Solicode
-        </h1>
+        <h1>Formulaire d'inscription aux Clubs Parascolaires à Solicode</h1>
         <h2 id="h2"></h2>
         <span>Nom :</span> <input type="text" id="name" />
         <p id="nameOutput"></p>
@@ -103,7 +101,6 @@
       </form>
     </section>
     <script>
-
       var validname = false;
       var validlastname = false;
       var validemail = false;
@@ -112,28 +109,28 @@
       var validgroup = false;
       var validclubs = false;
 
-       // varialbles ////////////////////
-       var counter =0
-        var select = document.getElementById('select')
-        var name = document.getElementById('name');
-      var nameOutput = document.getElementById('nameOutput')
+      // varialbles ////////////////////
+      var counter = 0;
+      var select = document.getElementById("select");
+      var name = document.getElementById("name");
+      var nameOutput = document.getElementById("nameOutput");
 
-      var lastname = document.getElementById('lastname');
-      var lastNameOutput = document.getElementById('lastNameOutput')
+      var lastname = document.getElementById("lastname");
+      var lastNameOutput = document.getElementById("lastNameOutput");
 
-      var email = document.getElementById('email');
-      var emailOutput = document.getElementById('emailOutput')
+      var email = document.getElementById("email");
+      var emailOutput = document.getElementById("emailOutput");
 
-      var phoneNum = document.getElementById('phoneNum');
-      var phoneNumOutput = document.getElementById('phoneNumOutput')
-      var array = []
+      var phoneNum = document.getElementById("phoneNum");
+      var phoneNumOutput = document.getElementById("phoneNumOutput");
+      var array = [];
 
       var gender = document.querySelectorAll('input[name="gender"]');
-      var genderOutput = document.getElementById('genderOutput')
+      var genderOutput = document.getElementById("genderOutput");
 
       var group = document.querySelectorAll('input[name="group"]');
-      var groupOutput = document.getElementById('groupOutput')
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+      var groupOutput = document.getElementById("groupOutput");
+      /////////////////////////////////////////////////////////////////////////////////////////////////////
 
       document.getElementById("name").addEventListener("input", namefun);
       function namefun() {
@@ -145,9 +142,11 @@
           name.style.border = "5px solid red";
           validname = false;
           nameOutput.innerHTML =
-            "Entrer un Nom qui ne depasse pas 15 character";  name.style.border = "5px solid red";
+            "Entrer un Nom qui ne depasse pas 15 character";
+          name.style.border = "5px solid red";
         } else {
-          validname = true; name.style.border = "5px solid green"
+          validname = true;
+          name.style.border = "5px solid green";
         }
       }
 
@@ -163,9 +162,11 @@
           lastname.style.border = "5px solid red";
           validlastname = false;
           lastNameOutput.innerHTML =
-            "Entrer un Prénom qui ne depasse pas 15 character"; lastname.style.border = "5px solid red"
+            "Entrer un Prénom qui ne depasse pas 15 character";
+          lastname.style.border = "5px solid red";
         } else {
-          validlastname = true;lastname.style.border = "5px solid green"
+          validlastname = true;
+          lastname.style.border = "5px solid green";
         }
       }
 
@@ -180,28 +181,37 @@
         ) {
           email.style.border = "5px solid red";
           validemail = false;
-          emailOutput.innerHTML = "Entre une adrresse email valide"; email.style.border = "5px solid red";
+          emailOutput.innerHTML = "Entre une adrresse email valide";
+          email.style.border = "5px solid red";
         } else {
-          validemail = true; email.style.border = "5px solid green"
+          validemail = true;
+          email.style.border = "5px solid green";
         }
       }
 
-      document.getElementById("phoneNum").addEventListener("input", phoneNumfun);
+      document
+        .getElementById("phoneNum")
+        .addEventListener("input", phoneNumfun);
       function phoneNumfun() {
         var phoneNum = document.getElementById("phoneNum");
         var phoneNumOutput = document.getElementById("phoneNumOutput");
-      
+
         phoneNumOutput.innerHTML = "";
         phoneNum.style.border = "solid #c2faf9 2px";
-        if (  
-         !(phoneNum.value.match(/(06)\d{8}$|(05)\d{8}$|(07)\d{8}$/) && phoneNum.value.match(/^[0-9]+$/) ) 
+        if (
+          !(
+            phoneNum.value.match(/(06)\d{8}$|(05)\d{8}$|(07)\d{8}$/) &&
+            phoneNum.value.match(/^[0-9]+$/)
+          )
         ) {
           phoneNum.style.border = "5px solid red";
           validphone = false;
           phoneNumOutput.innerHTML =
-            "Entrer un nombre de telephone de 10 chiffre qui commence par 05 ou 06 ou 07 "; phoneNum.style.border = "5px solid red"
+            "Entrer un nombre de telephone de 10 chiffre qui commence par 05 ou 06 ou 07 ";
+          phoneNum.style.border = "5px solid red";
         } else {
-          validphone = true;phoneNum.style.border = "5px solid green"
+          validphone = true;
+          phoneNum.style.border = "5px solid green";
         }
       }
 
@@ -217,7 +227,7 @@
             document.getElementById("gender-2").checked
           )
         ) {
-          genderOutput.innerHTML = "Choisie un Genre";  
+          genderOutput.innerHTML = "Choisie un Genre";
           validgender = false;
         } else {
           validgender = true;
@@ -246,31 +256,33 @@
         }
       }
       function validate() {
-       
+        for (var k = 0; k < select.options.length; k++) {
+          if (select.options[k].selected === true) {
+            counter++;
+          }
+        }
 
-        for (var  k= 0;  k< select.options.length; k++) {if ( select.options[k].selected === true) { counter++;}}
-        
-        if ( !(counter > 3 || counter < 1 ) &&
-          (validname === true &&
+        if (
+          !(counter > 3 || counter < 1) &&
+          validname === true &&
           validlastname === true &&
           validemail === true &&
           validphone === true &&
           validgender === true &&
-          validgroup === true)
-        ) 
-        {
+          validgroup === true
+        ) {
           window.location.href = "validation.html";
         } else {
-          document.getElementById('clubsOutput').innerHTML = "Choisie on moin 1 group , ne depasse pas 3 group";
+          document.getElementById("clubsOutput").innerHTML =
+            "Choisie on moin 1 group , ne depasse pas 3 group";
           document.getElementById("form").style.boxShadow = " red 5px 5px 5px";
           document.getElementById("h2").style.color = "red";
-          document.getElementById("h2").innerHTML ="<h2>" +" Remplie tout les champ du formulaire s'il vous plait  :" +"<h2/>";
-        } }
-
-
-       
-       
-     
+          document.getElementById("h2").innerHTML =
+            "<h2>" +
+            " Remplie tout les champ du formulaire s'il vous plait  :" +
+            "<h2/>";
+        }
+      }
     </script>
   </body>
 </html>
